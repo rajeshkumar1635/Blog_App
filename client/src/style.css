@@ -9,10 +9,9 @@
     top: 0;
     left: 0;
      z-index: 1000;
-    height: 60px; 
-    margin-top: 70px;  
+    height: 60px;   
     background-color: #91b2d3;
-    padding: 10px 25px;
+    /* padding: 10px 25px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,4 +22,31 @@
     text-decoration: none;
     margin:0px 10px;
     transition: color 0.3s;
+}
+body {
+  padding-top: 60px; /* Adjust based on navbar height */
+}
+.post-box {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 16px;
+  margin: 20px auto;
+  max-width: 600px;
+  transition: box-shadow 0.2s;
+}
+
+.post-box img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 20px;
+}
+
+.post-content {
+  flex: 1;
 }

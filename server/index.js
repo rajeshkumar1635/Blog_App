@@ -17,6 +17,7 @@ app.use(cors({
   credentials: true
 }));
 app.use(cookieParser());
+app.use('/Images', express.static('public/Images'));
 mongoose.connect('mongodb://localhost:27017/blog');
 
 const verifyUser=(req,res,next)=>{
