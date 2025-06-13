@@ -96,6 +96,12 @@ PostModel.create({title:req.body.title,
 
 } )
 
+app.get('/getposts',(req,res)=>{
+    PostModel.find()
+    .then(posts=>res.json(posts))
+    .catch(err=>res.json(err))
+})
+
 app.get('/logout',(req,res)=>{
     res.clearCookie('token');
     return res.json("Success");

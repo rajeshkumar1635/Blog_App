@@ -23,7 +23,12 @@ axios.get("http://localhost:3000/logout")
         </div>
         <div>
 <a href=""  className='link'>Home</a>
-<Link to="/create" className='link' >Create</Link>
+{
+  user.username?<Link to="/create" className='link' >Create</Link>
+  :<></>
+
+}
+
 <a href=""  className='link'>Contact</a>
         </div>
         {

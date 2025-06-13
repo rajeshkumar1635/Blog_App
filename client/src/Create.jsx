@@ -15,7 +15,7 @@ export default function Create() {
         formData)
       .then(res=> 
       {
-        if(res.data==="Success"){
+        if(res.data && res.data._id){
           window.location.href="/";
         }
       }
