@@ -88,7 +88,11 @@ const upload=multer({
     storage:storage
 })
 app.post('/create',verifyUser,upload.single('file'),(req,res) =>{
-    console.log(req.file);
+PostModel.create({title:req.body.title,
+    desc:req.body.desc,
+    file:req.file.filename
+}).then(result=>res.json(result))
+.catch(err=>res.json(err))
 
 } )
 
