@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [posts,setPosts]=useState([]);
@@ -21,7 +22,7 @@ export default function Home() {
     <div className='fluid-container'>
       {
         posts.map(p=>(
-          <div className='post-box'>
+          <Link to={`/post/${p._id}`}  className='post-box' key={p._id}>
             <img src={`http://localhost:3000/Images/${p.file}`} alt=""/>
             <div className='post-content'>
           <h3>
@@ -31,7 +32,7 @@ export default function Home() {
             {p.desc}
           </p>
           </div>
-          </div>
+          </Link>
         ))
       }
     </div>

@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './Navbar'
 import Login from './Login'
 import Create from './Create'
+import Post from './Post'
 import Register from './Register'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Route, Routes } from 'react-router-dom'
@@ -29,6 +30,7 @@ axios.get("http://localhost:3000/").then(user=>{
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/' element={<Home/>}></Route>
         <Route path="/create" element={<Create/>}></Route>
+        <Route path='/post/:id' element={<Post/>}></Route>
       </Routes>
     </Router>
     </userContext.Provider>

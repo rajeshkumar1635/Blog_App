@@ -18,7 +18,7 @@ app.use(cors({
 }));
 app.use(cookieParser());
 app.use('/Images', express.static('public/Images'));
-mongoose.connect('mongodb://localhost:27017/blog');
+mongoose.connect('mongodb+srv://kynvkrk:Rajesh1635@cluster0.7ddqgad.mongodb.net/');
 
 const verifyUser=(req,res,next)=>{
 const token=req.cookies.token;
@@ -102,6 +102,16 @@ app.get('/getposts',(req,res)=>{
     .then(posts=>res.json(posts))
     .catch(err=>res.json(err))
 })
+
+app.get('/getpostbyid/:id', async (req, res) => {
+  try {
+    const post = await PostModel.findById(req.params.id);
+    if (!post) return res.status(404).json({ error: "Post not found" });
+    res.json(post);
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
+  }
+});
 
 app.get('/logout',(req,res)=>{
     res.clearCookie('token');
